@@ -4,6 +4,22 @@ email=xxxx@qq.com
 password=xxx
 your_web_password=1234qwer
 
+# 检测服务器是否可以访问chat.openai.com
+target="chat.openai.com"
+# 执行ping命令，设置超时时间为2秒，并将结果输出到/dev/null
+ping -c 1 -W 2 $target > /dev/null
+
+# 检查ping命令的返回值
+if [ $? -eq 0 ]; then
+  # 如果ping成功，则继续执行后续操作
+  echo "Ping成功，继续执行脚本..."
+  # 在这里添加您的脚本逻辑
+else
+  # 如果ping失败，则输出错误信息并退出脚本
+  echo "无法ping通$target，请检查网络连接！"
+  exit 1
+fi
+echo "--------------环境检测-------------------"
 # 检查 Docker 是否已经安装
 if ! command -v docker &> /dev/null; then
     # 如果 Docker 没有安装，则安装 Docker
@@ -31,7 +47,6 @@ fi
 if python3 -c "import yaml" &> /dev/null; then
   echo "PyYAML 已安装"
 else
-  echo "PyYAML 未安装，开始安装..."
   # 安装 PyYAML
   if sudo yum install -y python3-PyYAML; then
     echo "PyYAML 安装成功"
@@ -39,10 +54,6 @@ else
     echo "PyYAML 安装失败"
   fi
 fi
-
-
-python3 get-accessToken.py $email $password $your_web_password 2>&1
-
 
 # 检查 Docker Compose 是否已经安装
 if ! docker-compose -v &> /dev/null
@@ -64,4 +75,8 @@ else
     echo "Docker Compose 已安装，版本号：$(docker-compose --version)"
 fi
 
+echo "---------------检测完毕------------"
+
+
+python3 get-accessToken.py $email $password $your_web_password 2>&1
 docker-compose up --force-recreate --build -d
