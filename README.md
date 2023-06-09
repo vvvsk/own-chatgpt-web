@@ -43,3 +43,5 @@ your_web_password=1234qwer #访问你的gpt网站所需密码
 
    ```sudo crontab -l
    sudo crontab -l
+   
+## 请大家多多投票支持我吧，爱心。
