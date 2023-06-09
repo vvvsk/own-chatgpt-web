@@ -5,7 +5,7 @@ centos7 下一键搭建chatgpt-web
 
 ````
 git clone https://github.com/vvvsk/own-chatgpt-web.git
-cd own-chat-web
+cd own-chatgpt-web
 ````
 
 然后配置`run.sh`文件中三个值
