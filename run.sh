@@ -19,7 +19,7 @@ else
   echo "无法ping通$target，请检查网络连接！"
   exit 1
 fi
-echo "--------------环境检测-------------------"
+echo "--------------环境检测--------------"
 # 检查 Docker 是否已经安装
 if ! command -v docker &> /dev/null; then
     # 如果 Docker 没有安装，则安装 Docker
@@ -75,7 +75,7 @@ else
     echo "Docker Compose 已安装，版本号：$(docker-compose --version)"
 fi
 
-echo "---------------检测完毕------------"
+echo "--------------检测完毕--------------"
 
 
 python3 get-accessToken.py $email $password $your_web_password 2>&1
