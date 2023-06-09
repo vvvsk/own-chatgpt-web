@@ -1,9 +1,10 @@
 # own-chatgpt-web
 centos7 下一键搭建chatgpt-web
+
 以下环境成功搭建：
-   1 vCPU Core
-   10 GB Storage
-   512 MB RAM 
+   1 vCPU Core，
+   10 GB Storage，
+   512 MB RAM ，
    centos7
    
 ## 使用方式
