@@ -4,7 +4,7 @@ import yaml
 # 第一个参数是脚本名称，因此需要从第二个参数开始进行处理
 email = sys.argv[1]
 password = sys.argv[2]
-your_web_password = "1234qwer"
+your_web_password = sys.argv[3]
 auth = Auth0(email, password)
 access_token = auth.auth()
 
