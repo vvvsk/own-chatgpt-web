@@ -20,7 +20,7 @@ password=xxx #你的gpt密码
 your_web_password=1234qwer #访问你的gpt网站所需密码
 ```
 
-3. 执行命令 `bash run.sh`，访问http://your_vps_ip:3002，即可访问chatgpt-web，端口需要开放，也可以在docker-compose.yml改成其他端口
+3. 执行命令 `bash run.sh`，访问http://your_vps_ip:3002，即可访问chatgpt-web，端口需要开放，也可以在docker-compose.yml改成其他端口。
 
 ## 因为登录信息14天会过期，因此建议设置每周执行一次脚本。以下是步骤：
 
