@@ -34,7 +34,7 @@ your_web_password=1234qwer #访问你的gpt网站所需密码
 2. 在cron表中添加以下行来指定每周一运行脚本：
 
    ```
-   0 0 * * 1 /home/own-chat-web/run.sh
+   0 0 * * 0 /home/own-chat-web/run.sh
    ```
 
    这将在每个星期一的午夜（0点）运行指定的脚本。
